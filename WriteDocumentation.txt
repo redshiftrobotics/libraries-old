@@ -1,0 +1,15 @@
+**Sumarry**
+Write is a simple application that builds on top of the nxtDisplayString funciton. 
+With Write, you can switch between two modes, Debug mode and Static Mode. Do this 
+by pressing the big orange button. The two functions are WriteLine(int screenposition, string towrite),
+and WriteDebug(string towrite). When you are in Static mode, it will display all
+of the strings written at the position you set, like the normal usage of the nxtDisplayString.
+When you are in debug mode, it will display a list of all the strings you have passed to 
+WriteDebug, which can be scrolled through using the arrow keys. Remember to InitializeWrite at
+the beginning of your code.
+
+**Methods**
+InitializeWrite(): Starts the code.
+WriteLine(int LineToWrite, string TextToWrite): Adds text to the static page at the specified line.
+WriteDebug(string TextToWrite): Adds text to the end of the debug mode page.
+WriteDebugInt(int NumberToWrite): Adds a number to the end of the debug mode page.
