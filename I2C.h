@@ -131,10 +131,10 @@ void I2C_SetEncoderPosition(tSensors port, int daisychainLevel, int MotorNumber,
 	if (MotorNumber == 1)
 	{
 		tByteArray I2Crequest;
-			I2Crequest[0] = 6;
-			I2Crequest[1] = 0x02 * daisychainLevel;
-			I2Crequest[2] = 0x40;
-			I2Crequest[3] = (byte)((EncoderPosition >> 24) & 0x000000ff);
+		I2Crequest[0] = 6;
+		I2Crequest[1] = 0x02 * daisychainLevel;
+		I2Crequest[2] = 0x40;
+		I2Crequest[3] = (byte)((EncoderPosition >> 24) & 0x000000ff);
 		I2Crequest[4] = (byte)((EncoderPosition >> 16) & 0x000000ff);
 		I2Crequest[5] = (byte)((EncoderPosition >> 8) & 0x000000ff);
 		I2Crequest[6] = (byte)(EncoderPosition & 0x000000ff);
@@ -152,7 +152,7 @@ void I2C_SetEncoderPosition(tSensors port, int daisychainLevel, int MotorNumber,
 		tByteArray I2Crequest;
 		I2Crequest[0] = 3;
 		I2Crequest[1] = 0x02 * daisychainLevel;
-			I2Crequest[2] = 0x46;
+		I2Crequest[2] = 0x46;
 		I2Crequest[3] = MotorSpeed;
 		writeI2C(port, I2Crequest);
 
