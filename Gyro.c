@@ -49,7 +49,5 @@ float Gyro_Heading()
 
 void Gyro_Reset()
 {
-	hogCPU();
 	heading = 0;
-	releaseCPU();
 }
