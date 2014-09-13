@@ -1,5 +1,5 @@
-#include "../libraries/Gyro.c"
-#include "../libraries/Motors.h"
+#include "Gyro.c"
+#include "Motors.h"
 
 float FinalX = 5;
 float FinalY = 0;
