@@ -97,7 +97,7 @@ int Motors_GetPosition(tSensors Port, int DaisyChainLevel, int MotorNumber)
 	return I2C_GetEncoderPosition(Port, DaisyChainLevel, MotorNumber);
 }
 
-bool Motors_isMoving(tSensors Port, int DaisyChainLevel, int MotorNumber) {
+bool Motors_IsMoving(tSensors Port, int DaisyChainLevel, int MotorNumber) {
 	int currentPos = 0;
 	int lastPos = 0;
 	currentPos = I2C_GetEncoderPosition(Port, DaisyChainLevel, MotorNumber);
