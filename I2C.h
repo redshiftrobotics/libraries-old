@@ -18,17 +18,17 @@ B. Standard method argument order is:
 
 */
 
-#include "drivers/common.h"
+#include "drivers\common.h"
 
 void I2C_WritePMW(tSensors port, int DaisyChainLevel, byte Status)
 {
-        tByteArray I2Crequest;
-        tByteArray I2Cresponse;
-        I2Crequest[0] = 3;
-        I2Crequest[1] = 0x02 * DaisyChainLevel;
-        I2Crequest[2] = 0x48;
-        I2Crequest[3] = Status;
-        writeI2C(port, I2Crequest, I2Cresponse, 1);
+	tByteArray I2Crequest;
+	tByteArray I2Cresponse;
+	I2Crequest[0] = 3;
+	I2Crequest[1] = 0x02 * DaisyChainLevel;
+	I2Crequest[2] = 0x48;
+	I2Crequest[3] = Status;
+	writeI2C(port, I2Crequest, I2Cresponse, 1);
 }
 
 void I2C_MoveServo(tSensors port, int DaisyChainLevel, int ServoNumber, byte Position)

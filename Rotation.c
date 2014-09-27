@@ -1,4 +1,4 @@
-#include "drivers/hitechnic-protoboard.h"
+#include "drivers\hitechnic-protoboard.h"
 
 int RawReadingToDegrees(int NineBitNumber)
 {
@@ -33,7 +33,7 @@ float Rotation_Degrees()
 
 		if (AnalogPins > 512)
 		{
-			RawReading += (1 << (4 + (4 - i));
+			RawReading += (1 << (4 + (4 - i)));
 		}
 	}
 
