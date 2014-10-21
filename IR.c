@@ -1,5 +1,8 @@
 #include "drivers\hitechnic-irseeker-v2.h"
 
+#warn "Unless you are a member of 2856, do not use this library! It does not use generalized functions."
+#warn "A 2856 member should come integrate this library into their team-specific repository."
+
 typedef struct
 {
   int A;
