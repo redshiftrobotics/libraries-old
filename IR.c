@@ -12,37 +12,37 @@ typedef struct
   int E;
 } Values;
 
-Values IR_OneValue;
-Values IR_TwoValue;
+Values IR_LeftValue;
+Values IR_RightValue;
 
 const int Threashold = 100;
 
 int IR_OneDegree()
 {
 	//the first IR sensor
-	if(IR_OneValue.B > Threashold && IR_OneValue.C < Threashold)
+	if(IR_LeftValue.B > Threashold && IR_LeftValue.C < Threashold)
 	{
 		return 50;
 	}
-	else if(IR_OneValue.B > Threashold && IR_OneValue.C > Threashold && IR_OneValue.D < Threashold)
+	else if(IR_LeftValue.B > Threashold && IR_LeftValue.C > Threashold && IR_LeftValue.D < Threashold)
 	{
 		return 20;
 	}
-	else if(IR_OneValue.C > Threashold && IR_OneValue.B < Threashold && IR_OneValue.D < Threashold)
+	else if(IR_LeftValue.C > Threashold && IR_LeftValue.B < Threashold && IR_LeftValue.D < Threashold)
 	{
 		return 0;
 	}
-	else if(IR_OneValue.C > Threashold && IR_OneValue.B > Threashold && IR_OneValue.D > Threashold)
+	else if(IR_LeftValue.C > Threashold && IR_LeftValue.B > Threashold && IR_LeftValue.D > Threashold)
 	{
 		return 0;
 	}
-	else if(IR_OneValue.C > Threashold && IR_OneValue.D > Threashold && IR_OneValue.B < Threashold)
+	else if(IR_LeftValue.C > Threashold && IR_LeftValue.D > Threashold && IR_LeftValue.B < Threashold)
 	{
 		return -20;
 	}
-	else if(IR_OneValue.D > Threashold && IR_OneValue.C < Threashold)
+	else if(IR_LeftValue.D > Threashold && IR_LeftValue.C < Threashold)
 	{
-		return -50
+		return -50;
 	}
 
 
@@ -54,29 +54,29 @@ int IR_OneDegree()
 int IR_TwoDegree()
 {
 	//the first IR sensor
-	if(IR_TwoValue.B > Threashold && IR_TwoValue.C < Threashold)
+	if(IR_RightValue.B > Threashold && IR_RightValue.C < Threashold)
 	{
 		return -50;
 	}
-	else if(IR_TwoValue.B > Threashold && IR_TwoValue.C > Threashold && IR_TwoValue.D < Threashold)
+	else if(IR_RightValue.B > Threashold && IR_RightValue.C > Threashold && IR_RightValue.D < Threashold)
 	{
 		return -20;
 	}
-	else if(IR_TwoValue.C > Threashold && IR_TwoValue.B < Threashold && IR_TwoValue.D < Threashold)
+	else if(IR_RightValue.C > Threashold && IR_RightValue.B < Threashold && IR_RightValue.D < Threashold)
 	{
 		return 0;
 	}
-	else if(IR_TwoValue.C > Threashold && IR_TwoValue.B > Threashold && IR_TwoValue.D > Threashold)
+	else if(IR_RightValue.C > Threashold && IR_RightValue.B > Threashold && IR_RightValue.D > Threashold)
 	{
 		return 0;
 	}
-	else if(IR_TwoValue.C > Threashold && IR_TwoValue.D > Threashold && IR_TwoValue.B < Threashold)
+	else if(IR_RightValue.C > Threashold && IR_RightValue.D > Threashold && IR_RightValue.B < Threashold)
 	{
 		return 20;
 	}
-	else if(IR_TwoValue.D > Threashold && IR_TwoValue.C < Threashold)
+	else if(IR_RightValue.D > Threashold && IR_RightValue.C < Threashold)
 	{
-		return 50
+		return 50;
 	}
 
 
@@ -86,6 +86,6 @@ int IR_TwoDegree()
 
 void IR_Update()
 {
-	HTIRS2readAllACStrength(IROne, IR_OneValue.A, IR_OneValue.B, IR_OneValue.C, IR_OneValue.D, IR_OneValue.E);
-	HTIRS2readAllACStrength(IRTwo, IR_TwoValue.A, IR_TwoValue.B, IR_TwoValue.C, IR_TwoValue.D, IR_TwoValue.E);
+	HTIRS2readAllACStrength(IROne, IR_LeftValue.A, IR_LeftValue.B, IR_LeftValue.C, IR_LeftValue.D, IR_LeftValue.E);
+	HTIRS2readAllACStrength(IRTwo, IR_RightValue.A, IR_RightValue.B, IR_RightValue.C, IR_RightValue.D, IR_RightValue.E);
 }
